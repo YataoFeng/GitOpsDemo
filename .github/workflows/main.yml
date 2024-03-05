@@ -31,4 +31,4 @@ jobs:
       - name: Build and run unit tests
         run: |
           dotnet restore src/WebApplication
-          dotnet test test/WebApplication.test
+          dotnet test test/WebApplication.Test
