@@ -28,5 +28,5 @@ jobs:
 
       - name: Build and run unit tests
         run: |
-          dotnet restore "src/${{SERVICE}}"
-          dotnet test "test/${{SERVICE}}.test"
+          dotnet restore "src/${{ env.SERVICE }}"
+          dotnet test "test/${{ env.SERVICE }}.test"
