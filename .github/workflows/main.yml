@@ -7,6 +7,7 @@ on:
       - test
     paths:
       - 'src/WebApplication/**'
+      
 env:
   SERVICE: webapplication
   IMAGE: webapplication
