@@ -1,0 +1,30 @@
+name: WebApplication
+
+on:
+  push:
+    branches:
+      - master
+      - test
+    paths:
+      - 'src/WebApplication/**'
+env:
+  SERVICE: webapplication
+  IMAGE: webapplication
+  DOTNET_VERSION: 8.0.x
+jobs:
+  build-test-and-deploy-identity:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+        
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Build and run unit tests
+        run: |
+          dotnet restore "src/${{SERVICE}}"
+          dotnet test "test/${{SERVICE}}.test"
