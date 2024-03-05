@@ -11,6 +11,7 @@ env:
   SERVICE: webapplication
   IMAGE: webapplication
   DOTNET_VERSION: 8.0.x
+  
 jobs:
   build-test-and-deploy-identity:
     runs-on: ubuntu-latest
